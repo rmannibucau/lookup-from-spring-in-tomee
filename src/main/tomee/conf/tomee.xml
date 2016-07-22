@@ -1,0 +1,4 @@
+<tomee>
+  <Resource id="Default JMS Resource Adapter" type="ActiveMQResourceAdapter" />
+  <Resource id="jms/ConnectionFactory" type="javax.jms.ConnectionFactory" />
+</tomee>

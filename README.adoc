@@ -1,0 +1,162 @@
+= Simple sample showing how to lookup a JMS TomEE resource in spring
+
+Expected output:
+
+[source]
+----
+ » mvn package tomee:run
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building lookup-from-spring-in-tomee 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ lookup-from-spring-in-tomee ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ lookup-from-spring-in-tomee ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to D:\dev\github\lookup-from-spring-in-tomee\target\classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ lookup-from-spring-in-tomee ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory D:\dev\github\lookup-from-spring-in-tomee\src\test\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ lookup-from-spring-in-tomee ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ lookup-from-spring-in-tomee ---
+[INFO] No tests to run.
+[INFO]
+[INFO] --- maven-war-plugin:2.6:war (default-war) @ lookup-from-spring-in-tomee ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [lookup-from-spring-in-tomee] in [D:\dev\github\lookup-from-spring-in-tomee\target\lookup-from-spring-in-tomee-1.0-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [D:\dev\github\lookup-from-spring-in-tomee\src\main\webapp]
+[INFO] Webapp assembled in [170 msecs]
+[INFO] Building war: D:\dev\github\lookup-from-spring-in-tomee\target\lookup-from-spring-in-tomee-1.0-SNAPSHOT.war
+[INFO]
+[INFO] --- tomee-maven-plugin:7.0.1:run (default-cli) @ lookup-from-spring-in-tomee ---
+[INFO] TomEE was unzipped in 'D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee'
+[INFO] Override 'conf/tomee.xml'
+[INFO] Removed not mandatory default webapps
+[INFO] Installed 'D:\dev\github\lookup-from-spring-in-tomee\target\lookup-from-spring-in-tomee-1.0-SNAPSHOT.war' in D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\webapps\lookup-from-spring-in-tomee-1.0-SNAPSHOT.war
+[INFO] TomEE will run in development mode
+[INFO] Running 'org.apache.openejb.maven.plugin.run'. Configured TomEE in plugin is localhost:8080 (plugin shutdown port is 8005 and https port is null)
+INFOS - Server version:        Apache Tomcat (TomEE)/8.5.3 (7.0.1)
+INFOS - Server built:          Jun 9 2016 11:16:29 UTC
+INFOS - Server number:         8.5.3.0
+INFOS - OS Name:               Windows 10
+INFOS - OS Version:            10.0
+INFOS - Architecture:          amd64
+INFOS - Java Home:             C:\Program Files\Java\jdk1.8.0_72\jre
+INFOS - JVM Version:           1.8.0_72-b15
+INFOS - JVM Vendor:            Oracle Corporation
+INFOS - CATALINA_BASE:         D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee
+INFOS - CATALINA_HOME:         D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee
+INFOS - Command line argument: -XX:+HeapDumpOnOutOfMemoryError
+INFOS - Command line argument: -Dorg.apache.catalina.STRICT_SERVLET_COMPLIANCE=false
+INFOS - Command line argument: -Dopenejb.session.manager=org.apache.tomee.catalina.session.QuickSessionManager
+INFOS - Command line argument: -Dtomee.remote.support=true
+INFOS - Command line argument: -Dopenejb.system.apps=false
+INFOS - Command line argument: -Dtomee.jsp-development=true
+INFOS - Command line argument: -Djava.util.logging.config.file=D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\conf\logging.properties
+INFOS - Command line argument: -javaagent:D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\lib\openejb-javaagent.jar
+INFOS - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+INFOS - Command line argument: -Djava.io.tmpdir=D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\temp
+INFOS - Command line argument: -Djava.endorsed.dirs=D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\endorsed
+INFOS - Command line argument: -Dcatalina.base=D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee
+INFOS - Command line argument: -Dcatalina.home=D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee
+INFOS - Command line argument: -Dcatalina.ext.dirs=D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\lib
+INFOS - Command line argument: -Dorg.apache.tomcat.util.http.ServerCookie.ALLOW_HTTP_SEPARATORS_IN_V0=true
+INFOS - Command line argument: -ea
+INFOS - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_72\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\romain\.babun\cygwin\usr\local\bin;C:\Users\romain\.babun\cygwin\bin;C:\Users\romain\.babun\cygwin\home\romain\.local\bin;C:\Program Files\ConEmu\ConEmu\Scripts;C:\Program Files\ConEmu;C:\Program Files\ConEmu\ConEmu;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Program Files\Java\jdk1.8.0_72\bin;C:\softwares\apache-maven-3.3.9\bin;C:\Program Files (x86)\Subversion\bin;C:\Program Files\nodejs;C:\Ruby23\bin;C:\Users\romain\.babun;C:\Program Files\Docker Toolbox;C:\Users\romain\AppData\Local\atom\bin;C:\Users\romain\AppData\Roaming\npm;C:\Program Files (x86)\Nmap;C:\Users\romain\.babun\cygwin\lib\lapack;C:\softwares\tsm\bin;C:\softwares\tsm\bin;C:\softwares\tsm\bin;.
+INFOS - Initializing ProtocolHandler ["http-nio-8080"]
+INFOS - Using a shared selector for servlet write/read
+INFOS - Initializing ProtocolHandler ["ajp-nio-8009"]
+INFOS - Using a shared selector for servlet write/read
+INFOS - Using 'tomee.remote.support=true'
+INFOS - Using 'openejb.jdbc.datasource-creator=org.apache.tomee.jdbc.TomEEDataSourceCreator'
+INFOS - ********************************************************************************
+INFOS - OpenEJB http://tomee.apache.org/
+INFOS - Startup: Fri Jul 22 15:47:49 CEST 2016
+INFOS - Copyright 1999-2016 (C) Apache OpenEJB Project, All Rights Reserved.
+INFOS - Version: 7.0.1
+INFOS - Build date: 20160623
+INFOS - Build time: 12:04
+INFOS - ********************************************************************************
+INFOS - openejb.home = D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee
+INFOS - openejb.base = D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee
+INFOS - Created new singletonService org.apache.openejb.cdi.ThreadSingletonServiceImpl@4e91d63f
+INFOS - Succeeded in installing singleton service
+[INFO] Waiting for command: [quit, exit, reload]
+INFOS - TomEE configuration file is 'D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\conf\tomee.xml'
+INFOS - Configuring Service(id=Tomcat Security Service, type=SecurityService, provider-id=Tomcat Security Service)
+INFOS - Configuring Service(id=Default Transaction Manager, type=TransactionManager, provider-id=Default Transaction Manager)
+INFOS - Configuring Service(id=Default JMS Resource Adapter, type=Resource, provider-id=Default JMS Resource Adapter)
+INFOS - Configuring Service(id=jms/ConnectionFactory, type=Resource, provider-id=Default JMS Connection Factory)
+INFOS - Using 'openejb.system.apps=false'
+INFOS - Using 'openejb.deployments.classpath=false'
+INFOS - Creating TransactionManager(id=Default Transaction Manager)
+INFOS - Creating SecurityService(id=Tomcat Security Service)
+INFOS - Creating Resource(id=Default JMS Resource Adapter)
+INFOS - Thread pool size for 'Default JMS Resource Adapter' is (30)
+INFOS - ActiveMQ5Factory creating broker
+INFOS - Loaded the Bouncy Castle security provider.
+INFOS - Using ActiveMQ startup timeout of 10000ms
+INFOS - Starting ActiveMQ BrokerService
+INFOS - Using Persistence Adapter: MemoryPersistenceAdapter
+INFOS - Apache ActiveMQ 5.13.3 (localhost, ID:DESKTOP-NNV3HHM-2903-1469195270588-0:1) is starting
+INFOS - Listening for connections at: tcp://down.baidu2016.com:61616
+INFOS - Connector tcp://down.baidu2016.com:61616 started
+INFOS - Apache ActiveMQ 5.13.3 (localhost, ID:DESKTOP-NNV3HHM-2903-1469195270588-0:1) started
+INFOS - For help or more information please see: http://activemq.apache.org
+INFOS - Starting ActiveMQ checkpoint
+INFOS - ActiveMQ broker started
+INFOS - Creating Resource(id=jms/ConnectionFactory)
+INFOS - Creating ConnectionManager for Resource(id=jms/ConnectionFactory)
+INFOS - No runtime TransactionSupport
+INFOS - Creating ServerService(id=cxf)
+INFOS - Creating ServerService(id=cxf-rs)
+INFOS -   ** Bound Services **
+INFOS -   NAME                 IP              PORT
+INFOS - -------
+INFOS - Ready!
+INFOS - Initialization processed in 2979 ms
+INFOS - Importing a Tomcat Resource with id 'UserDatabase' of type 'org.apache.catalina.UserDatabase'.
+INFOS - Creating Resource(id=UserDatabase)
+INFOS - D▒marrage du service Catalina
+INFOS - Starting Servlet Engine: Apache Tomcat (TomEE)/8.5.3 (7.0.1)
+INFOS - D▒ploiement de l'archive D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\webapps\lookup-from-spring-in-tomee-1.0-SNAPSHOT.war de l'application web
+INFOS - ------------------------- localhost -> /lookup-from-spring-in-tomee-1.0-SNAPSHOT
+INFOS - Extracting jar: D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\webapps\lookup-from-spring-in-tomee-1.0-SNAPSHOT.war
+INFOS - Extracted path: D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\webapps\lookup-from-spring-in-tomee-1.0-SNAPSHOT
+INFOS - Using 'openejb.session.manager=org.apache.tomee.catalina.session.QuickSessionManager'
+INFOS - Configuring enterprise application: D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\webapps\lookup-from-spring-in-tomee-1.0-SNAPSHOT
+INFOS - Configuring Service(id=Default Managed Container, type=Container, provider-id=Default Managed Container)
+INFOS - Auto-creating a container for bean lookup-from-spring-in-tomee-1.0-SNAPSHOT.Comp1996097607: Container(type=MANAGED, id=Default Managed Container)
+INFOS - Creating Container(id=Default Managed Container)
+INFOS - Using directory D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\temp for stateful session passivation
+INFOS - Enterprise application "D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\webapps\lookup-from-spring-in-tomee-1.0-SNAPSHOT" loaded.
+INFOS - Assembling app: D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\webapps\lookup-from-spring-in-tomee-1.0-SNAPSHOT
+INFOS - Deployed Application(path=D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\webapps\lookup-from-spring-in-tomee-1.0-SNAPSHOT)
+INFOS - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+INFOS - Root WebApplicationContext: initialization started
+INFOS - Refreshing Root WebApplicationContext: startup date [Fri Jul 22 15:47:53 CEST 2016]; root of context hierarchy
+INFOS - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+
+
+
+org.apache.openejb.resource.activemq.jms2.TomEERAConnectionFactory@57b9c594
+
+
+
+INFOS - Root WebApplicationContext: initialization completed in 754 ms
+INFOS - Deployment of web application archive D:\dev\github\lookup-from-spring-in-tomee\target\apache-tomee\webapps\lookup-from-spring-in-tomee-1.0-SNAPSHOT.war has finished in 2▒358 ms
+INFOS - Unable to set the web application class loader property [clearReferencesRmiTargets] to [true] as the property does not exist.
+INFOS - Starting ProtocolHandler [http-nio-8080]
+INFOS - Starting ProtocolHandler [ajp-nio-8009]
+INFOS - Server startup in 2450 ms
+----
